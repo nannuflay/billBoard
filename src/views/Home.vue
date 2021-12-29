@@ -198,11 +198,11 @@ export default defineComponent({
 </script>
 
 <template>
-<div class='flex justify-center p-3 dark:bg-zinc-900'>
+<div class='flex justify-center  dark:bg-zinc-900'>
   <GoogleMap
     api-key='AIzaSyC_6hw4jl5QTB3gOgP--RC_ZGL6odyoWSo'
     style='width: 100%'
-    class="h-[550px] z-10 rounded-2xl"
+    class="h-[570px] z-10 rounded-2xl"
     :center="center"
     :styles="theme"
     :zoom="15"

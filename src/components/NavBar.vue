@@ -6,13 +6,14 @@ import {
   mdiBackburger,
   mdiClose,
   mdiDotsVertical,
+  mdiMenu,
+  mdiAccount,
   mdiLogout,
   mdiThemeLightDark
 } from '@mdi/js'
 import NavBarItem from '@/components/NavBarItem.vue'
 import NavBarItemLabel from '@/components/NavBarItemLabel.vue'
 import NavBarMenu from '@/components/NavBarMenu.vue'
-import NavBarMenuDivider from '@/components/NavBarMenuDivider.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import Icon from '@/components/Icon.vue'
 
@@ -52,7 +53,7 @@ const menuOpenLg = () => {
 <template>
   <nav
     v-show="isNavBarVisible"
-    class="top-0 left-0 right-0 fixed flex bg-white h-14 border-b border-gray-100 z-30 w-screen transition-position xl:pl-60 lg:w-auto lg:items-stretch dark:bg-[#0b090a] dark:border-gray-800"
+    class="top-0 left-0 right-0 fixed flex bg-white h-14  z-30 w-screen transition-position xl:pl-60 lg:w-auto lg:items-stretch dark:bg-zinc-900"
     :class="{ 'ml-60 lg:ml-0': isAsideMobileExpanded }"
   >
     <div class="flex-1 items-stretch flex h-14">
@@ -69,13 +70,13 @@ const menuOpenLg = () => {
       </nav-bar-item>
     </div>
     <div
-      class="absolute w-screen top-14 left-0 bg-white shadow lg:w-auto lg:items-stretch lg:flex lg:grow lg:static lg:border-b-0 lg:overflow-visible lg:shadow-none dark:bg-[#0b090a]"
+      class="absolute w-screen top-14 left-0 bg-white shadow lg:w-auto lg:items-stretch lg:flex lg:grow lg:static lg:border-b-0 lg:overflow-visible lg:shadow-none dark:bg-zinc-900"
       :class="[isMenuNavBarActive ? 'block' : 'hidden']"
     >
       <div
         class="max-h-screen-menu overflow-y-auto lg:overflow-visible lg:flex lg:items-stretch lg:justify-end lg:ml-auto"
       >
-        <nav-bar-menu has-divider>
+        <nav-bar-menu >
           <user-avatar class="w-6 h-6 mr-3 inline-flex" />
           <div>
             <span>{{ userName }}</span>
@@ -86,20 +87,19 @@ const menuOpenLg = () => {
               <nav-bar-item-label :icon="mdiAccount" label="My Profile" />
             </nav-bar-item>
 
-            <nav-bar-menu-divider />
             <nav-bar-item>
               <nav-bar-item-label :icon="mdiLogout" label="Log Out" />
             </nav-bar-item>
           </template>
         </nav-bar-menu>
         <nav-bar-item
-          has-divider
           is-desktop-icon-only
           @click.prevent="toggleLightDark"
         >
           <nav-bar-item-label
             :icon="mdiThemeLightDark"
             label="Light/Dark"
+            class=" w-10 h-10"
             is-desktop-icon-only
           />
         </nav-bar-item>
