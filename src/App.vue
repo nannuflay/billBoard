@@ -1,7 +1,6 @@
 <script setup>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
-import menu from '@/menu.js'
 import NavBar from '@/components/NavBar.vue'
 import AsideMenu from '@/components/AsideMenu.vue'
 import FooterBar from '@/components/FooterBar.vue'
@@ -24,7 +23,7 @@ const overlayClick = () => {
 
 <template>
   <nav-bar />
-  <aside-menu :menu="menu" />
+  <aside-menu  />
   <router-view />
   <footer-bar />
   <overlay

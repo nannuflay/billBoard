@@ -19,7 +19,7 @@ if ((localStorageDarkModeValue === null && window.matchMedia('(prefers-color-sch
 }
 
 /* Default title tag */
-const defaultDocumentTitle = 'Admin One Vue 3 Tailwind'
+const defaultDocumentTitle = 'The billBoard 500'
 
 /* Collapse mobile aside menu on route change */
 router.beforeEach(to => {

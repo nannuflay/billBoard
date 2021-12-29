@@ -16,7 +16,7 @@ import UserCard from '@/components/UserCard.vue'
 
 const store = useStore()
 
-const titleStack = ref(['Admin', 'Profile'])
+const titleStack = ref(['The billBoard', 'Profile'])
 
 const profileForm = reactive({
   name: store.state.userName,
@@ -39,11 +39,10 @@ const submitPass = () => {
 </script>
 
 <template>
-  <title-bar :title-stack="titleStack" />
 
   <user-card />
 
-  <main-section>
+  <main-section class="dark:bg-[#2c2c2c]">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <card-component
         title="Edit Profile"
@@ -168,5 +167,4 @@ const submitPass = () => {
     </div>
   </main-section>
 
-  <bottom-other-pages-section />
 </template>
