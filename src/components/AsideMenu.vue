@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 import { mdiMenu } from '@mdi/js'
-import AsideMenuList from '@/components/AsideMenuList.vue'
 import NavBarItem from '@/components/NavBarItem.vue'
 import Icon from '@/components/Icon.vue'
 
@@ -25,9 +24,6 @@ const asideLgClose = () => {
   store.dispatch('asideLgToggle', false)
 }
 
-const menuClick = (event, item) => {
-  //
-}
 </script>
 
 <template>
@@ -54,22 +50,5 @@ const menuClick = (event, item) => {
         <span class="font-bold text-lg">The billBoard</span> <b class="font-black">500</b>
       </div>
     </div>
-    <!-- <div>
-      <template v-for="(menuGroup, index) in menu">
-        <p
-          v-if="typeof menuGroup === 'string'"
-          :key="`a-${index}`"
-          class="p-3 text-xs uppercase text-gray-400"
-        >
-          {{ menuGroup }}
-        </p>
-        <aside-menu-list
-          v-else
-          :key="`b-${index}`"
-          :menu="menuGroup"
-          @menu-click="menuClick"
-        />
-      </template>
-    </div> -->
   </aside>
 </template>

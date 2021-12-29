@@ -1,60 +1,52 @@
 <script setup>
-import { computed, ref } from "vue";
-import { useStore } from "vuex";
+import { computed, ref } from 'vue'
+import { useStore } from 'vuex'
 import {
   mdiForwardburger,
   mdiBackburger,
   mdiClose,
   mdiDotsVertical,
-  mdiMenu,
-  mdiClockOutline,
-  mdiCloud,
-  mdiCrop,
-  mdiAccount,
-  mdiCogOutline,
-  mdiEmail,
   mdiLogout,
-  mdiGithub,
-  mdiThemeLightDark,
-} from "@mdi/js";
-import NavBarItem from "@/components/NavBarItem.vue";
-import NavBarItemLabel from "@/components/NavBarItemLabel.vue";
-import NavBarMenu from "@/components/NavBarMenu.vue";
-import NavBarMenuDivider from "@/components/NavBarMenuDivider.vue";
-import UserAvatar from "@/components/UserAvatar.vue";
-import Icon from "@/components/Icon.vue";
+  mdiThemeLightDark
+} from '@mdi/js'
+import NavBarItem from '@/components/NavBarItem.vue'
+import NavBarItemLabel from '@/components/NavBarItemLabel.vue'
+import NavBarMenu from '@/components/NavBarMenu.vue'
+import NavBarMenuDivider from '@/components/NavBarMenuDivider.vue'
+import UserAvatar from '@/components/UserAvatar.vue'
+import Icon from '@/components/Icon.vue'
 
-const store = useStore();
+const store = useStore()
 
 const toggleLightDark = () => {
-  store.dispatch("darkMode");
-};
+  store.dispatch('darkMode')
+}
 
-const isNavBarVisible = computed(() => !store.state.isFullScreen);
+const isNavBarVisible = computed(() => !store.state.isFullScreen)
 
-const isAsideMobileExpanded = computed(() => store.state.isAsideMobileExpanded);
+const isAsideMobileExpanded = computed(() => store.state.isAsideMobileExpanded)
 
-const userName = computed(() => store.state.userName);
+const userName = computed(() => store.state.userName)
 
 const menuToggleMobileIcon = computed(() =>
   isAsideMobileExpanded.value ? mdiBackburger : mdiForwardburger
-);
+)
 
-const menuToggleMobile = () => store.dispatch("asideMobileToggle");
+const menuToggleMobile = () => store.dispatch('asideMobileToggle')
 
-const isMenuNavBarActive = ref(false);
+const isMenuNavBarActive = ref(false)
 
 const menuNavBarToggleIcon = computed(() =>
   isMenuNavBarActive.value ? mdiClose : mdiDotsVertical
-);
+)
 
 const menuNavBarToggle = () => {
-  isMenuNavBarActive.value = !isMenuNavBarActive.value;
-};
+  isMenuNavBarActive.value = !isMenuNavBarActive.value
+}
 
 const menuOpenLg = () => {
-  store.dispatch("asideLgToggle", true);
-};
+  store.dispatch('asideLgToggle', true)
+}
 </script>
 
 <template>

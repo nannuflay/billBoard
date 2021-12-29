@@ -1,18 +1,16 @@
 <script setup>
-import { computed, ref } from "vue";
-import { useStore } from "vuex";
-import { mdiCheckDecagram } from "@mdi/js";
-import Level from "@/components/Level.vue";
-import UserAvatar from "@/components/UserAvatar.vue";
-import CardComponent from "@/components/CardComponent.vue";
-import CheckRadioPicker from "@/components/CheckRadioPicker.vue";
-import Pill from "@/components/Pill.vue";
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import { mdiCheckDecagram } from '@mdi/js'
+import Level from '@/components/Level.vue'
+import UserAvatar from '@/components/UserAvatar.vue'
+import CardComponent from '@/components/CardComponent.vue'
+import Pill from '@/components/Pill.vue'
 
-const store = useStore();
+const store = useStore()
 
-const userName = computed(() => store.state.userName);
+const userName = computed(() => store.state.userName)
 
-const userSwitchVal = ref([]);
 </script>
 
 <template>

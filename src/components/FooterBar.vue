@@ -1,14 +1,13 @@
 <script setup>
-import { computed } from "vue";
-import { useStore } from "vuex";
-import Level from "@/components/Level.vue";
-import JbLogo from "@/components/JbLogo.vue";
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import Level from '@/components/Level.vue'
 
-const store = useStore();
+const store = useStore()
 
-const year = computed(() => new Date().getFullYear());
+const year = computed(() => new Date().getFullYear())
 
-const isFooterBarVisible = computed(() => !store.state.isFullScreen);
+const isFooterBarVisible = computed(() => !store.state.isFullScreen)
 </script>
 
 <template>

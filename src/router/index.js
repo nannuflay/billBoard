@@ -3,8 +3,6 @@ import Home from '@/views/Home.vue'
 
 const routes = [
   {
-    // Document title tag
-    // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
     meta: {
       title: 'Home'
     },
@@ -12,18 +10,14 @@ const routes = [
     name: 'home',
     component: Home
   },
-  
-
   {
     meta: {
       title: 'Profile'
     },
     path: '/profile',
     name: 'profile',
-    component: () => import(/* webpackChunkName: "profile" */ '@/views/Profile.vue')
+    component: () => import('@/views/Profile.vue')
   },
-
-
   {
     meta: {
       title: 'Login',
@@ -31,9 +25,8 @@ const routes = [
     },
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
-  },
-
+    component: () => import('@/views/Login.vue')
+  }
 ]
 
 const router = createRouter({
